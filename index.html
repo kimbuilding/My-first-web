@@ -77,6 +77,17 @@
         <a href="#">About us</a>
     </nav>
     </center>
+    <script>
+        const links =document.querySelectorAll(".navbar a");
+        const indicator= document.querySelector(".indicator");
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+
+                indicator.style.left = link.offsetLeft + "px";
+                indicator.style.width = link.offsetWidth + "px";
+            });
+        });
+    </script>
 
 
 
