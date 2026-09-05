@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lobster&family=Satisfy&display=swap');
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-    }
+    
     
     body{
 
@@ -18,6 +14,23 @@
         font-family:'Dancing Script', cursive;
         color: white;
     }
+
+    .navbar{
+        position:flex;
+        align-items: center;
+        gap:10px;
+        padding:10px;
+
+    }
+    .navbar a{
+        position: relative;
+        z-index: 2;
+        padding:10px 18px;
+        color:white;
+        text-decoration: none;
+    }
+
+    
     
     
 </style>
@@ -35,7 +48,14 @@
 
     <h2>LUNA BREW</h2>
 
-    <p>Home</p> <p>Menu</p> <p>About us</p>
+    <nav class="navbar">
+
+        <div class="indicator"></div>
+
+        <a href="#" class="active">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">About us</a>
+    </nav>
 
 
 
