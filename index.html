@@ -302,6 +302,30 @@
             track.style.transform =
             `translateX(-${position * 270}px)`;
         }
+
+        sig.addEventListener("click", () =>{
+            position++;
+            if(position > cards.length - 4){
+                position = 0;
+            }
+            moveCarousel();
+        });
+
+        back.addEventListener("click", ()=>{
+            position--;
+            if(position<0){
+                position=cards.length-4;
+            }
+            moveCarousel();
+        });
+
+        setInterval(()=>{
+            position++;
+            if(position>cards.length-4){
+                position = 0;
+            }
+            moveCarousel
+        },4000);
     </script>
 
 
