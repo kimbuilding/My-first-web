@@ -207,6 +207,14 @@
             }
             showSlide(currentSlide);
         });
+
+        setInterval(() => {
+            currentSlide++;
+            if(currentSlide >= slides.length){
+                currentSlide = 0;
+            }
+            showSlide(currentSlide);
+        }, 4000);
     </script>
 
 
