@@ -24,7 +24,7 @@
         width:fit-content;
 
     }
-    .navbar a{
+    .navbar a {
         position: relative;
         z-index: 2;
         padding:10px 18px;
@@ -35,10 +35,13 @@
     .inicator{
         position: absolute;
         z-index:1;
-        width:80px;
-        height:45px;
+        /*initial position*/
+        left:8px;
+        top:8px;
+        width:0;
+        height:40px;
         border-radius:50px;
-        background:rgba(255, 255, 255, 0.12);
+        background:rgba(255, 255, 255, 0.15);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.3);
@@ -46,8 +49,8 @@
         0 4px 20px rgba(0, 0, 0, 0.15),
         inset 0 1px 3px rgba(255, 255, 255, 0.3);
         transition:
-         left 0.4s cubic-bezier(.68, -0.55, .27, 1.55),
-        width 0.4s ease;
+         left 0.35s ease,
+        width 0.35s ease;
 
     }
 
@@ -79,14 +82,35 @@
         <a href="#About">About us</a>
     </nav>
     </center>
+
+    <section id="Home">
+        welcome to my cafe
+    </section>
+    <section id="Menu">
+        <h2>our menu</h2>
+    </section>
+    <section id="About">
+        <h2>about us</h2>
+    </section>
+
     <script>
+        const navbar = document.querySelector(".navbar");
         const links =document.querySelectorAll(".navbar a");
         const indicator= document.querySelector(".indicator");
-        links.forEach(link => {
-            link.addEventListener("click", () => {
 
-                indicator.style.left = link.offsetLeft + "px";
-                indicator.style.width = link.offsetWidth + "px";
+        function moveIndicator(link) {
+            indicator.style.left=link.offsetLeft +"px";
+            indicator.style.width=link.offsetWidth + "px";
+        }
+        
+        const activeLink=document.querySelector(".navbar a.active");
+        moveIndicator(activeLink);
+        links.forEach(link =>{
+            link.addEventListener("click", function(){
+                
+                links.forEach(elemento => elemento.classList.remove("active"));
+                this.classList.add("active");
+                moveIndicator(this);
             });
         });
     </script>
