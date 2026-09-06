@@ -186,19 +186,20 @@
                 `translateX(${(i - index) *100}%)`;
             });
         
-            
+
         currentSlide=index;
         }
 
-        showSlide(0);
-        setInterval(()=>{
+        next.addEventListener("click", () =>{
+
             currentSlide++;
             if(currentSlide >= slides.length) {
                 currentSlide = 0;
             }
+            
             showSlide(currentSlide);
-        }, 4000);
         
+        });
     </script>
 
 
