@@ -141,20 +141,24 @@
         let currentSlide = 0;
 
         function showSlide(index){ /*funcion para cambiar de imagen*/
-            slide.forEach(slide => {
+            slides.forEach(slide => {
                 slide.classList.remove("active");
             });
         
         slides[index].classList.add("active");
         currentSlide=index;
         }
-        setInterval(() =>{
+        slide.classList.remove("active");
+        slides[index].classList.add("active");
+        showSlide(1);
+        setInterval(()=>{
             currentSlide++;
-            if(currentSlide >= slides.length){
-                currentSlide=0;
+            if(currentSlide >= slides.length) {
+                currentSlide = 0;
             }
             showSlide(currentSlide);
         }, 4000);
+        
     </script>
 
 
