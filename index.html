@@ -101,6 +101,27 @@
         right: 15px;
     }
 
+    .menu-carousel {
+        width: 90%;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .menu-track {
+        min-width: calc(25% - 15px);
+
+        border-radius: 20px;
+        overflow: hidden;
+        background: white;
+    }
+    .card img{
+        width: 100%;
+        height: 180px;
+
+        object-fit: cover;
+    }
+
     
     
 </style>
@@ -158,7 +179,47 @@
                     <h3>Capuccino</h3>
                     <p>$50</p>
                 </div>
+
+                    <div class="card">
+                        <img src="images/caramel.jpeg">
+                        <h3>caramel</h3>
+                        <p>$70</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/affogato.jpeg">
+                        <h3>Affogato</h3>
+                        <p>$70</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/cortado.jpeg">
+                        <h3>Cortado</h3>
+                        <p>$70</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/mocha.jpeg">
+                        <h3>mocha</h3>
+                        <p>$70</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/frappe.jpeg">
+                        <h3>mocha</h3>
+                        <p>$79</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/irish.jpeg">
+                        <h3>irish</h3>
+                        <p>$70</p>
+                    </div>
+                
             </div>
+
+            <button class="sig"></button>
+            <button class="back"></button>
         </div>
     </section>
     <section id="About">
@@ -228,6 +289,19 @@
             }
             showSlide(currentSlide);
         }, 4000);
+
+        const track = document.querySelector(".menu-track");
+        const cards = document.querySelectorAll(".card");
+        const sig = document.querySelector(".sig");
+        const back =document.querySelector(".back");
+
+        let position = 0;
+
+        function moveCarousel(){
+
+            track.style.transform =
+            `translateX(-${position * 270}px)`;
+        }
     </script>
 
 
