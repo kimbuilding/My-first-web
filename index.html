@@ -109,7 +109,7 @@
     </section>
 
     <div class="carousel">
-        <img src="images/img_1.jpeg" width="50px" height="50px" class="slide active">
+        <img src="images/img_1.jpeg" width="40px" height="40px" class="slide active">
         <img src="images/img_2.jpeg" class="slide">
         <img src="images/img_3.jpeg" class="slide">
         
@@ -135,6 +135,19 @@
                 moveIndicator(this);
             });
         });
+
+        /*carousel*/
+        const slides=document.querySelectorAll(".slide"); /*selecciona todas las imagenes*/
+        let currentSlide = 0;
+
+        function showSlide(index){ /*funcion para cambiar de imagen*/
+            slide.forEach(slide => {
+                slide.classList.remove("active");
+            });
+        
+        slides[index].classList.add("active");
+        currentSlide=index;
+        }
     </script>
 
 
