@@ -223,8 +223,8 @@
                 
             </div>
 
-            <button class="sig">❮</button>
-            <button class="back">❯</button>
+            <button class="back">❮</button>
+            <button class="sig">❯</button>
         </div>
     </section>
     <section id="About">
@@ -304,8 +304,11 @@
 
         function moveCarousel(){
 
-            track.style.transform =
-            `translateX(-${position * 270}px)`;
+            const cardwith = cards[0].gerBoundingClientRect().width;
+            const gap = parseFloat(getComputedStyle(track).gap);
+
+            track.style.transform = 
+            `translateX(-${position * (cardWith + gap)}px)`;
         }
 
         sig.addEventListener("click", () =>{
